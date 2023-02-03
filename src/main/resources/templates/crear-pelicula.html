@@ -1,0 +1,147 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Crear pelicula</title>
+<style>
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+</style>
+</head>
+<body>
+
+<div id="contenedora" style="float:none; margin: 0 auto;width: 900px;" >
+	<form th:action="@{/pelicula/crear}" th:object="${pelicula}" method="post">
+		<div class="clearfix">
+			<div style="float: left; width: 50%">
+				<h1>Crear Pelicula</h1>
+			</div>
+			<div style="float: none;width: auto;overflow: hidden;min-height: 80px;position: relative;">
+				
+				<div style="position: absolute; left: 39%; top : 39%;">								
+					<input type="submit" value="Crear"/>					
+				</div>
+				
+			</div>
+		</div>
+		
+		<div class="clearfix">
+			<hr/>
+		</div>
+		
+		<div style="margin-top: 6px;" class="clearfix">
+			<div style="float: left;width: 50%">
+				titulo
+			</div>
+			<div style="float: none;width: auto;overflow: hidden;">
+				<input th:field="*{titulo}" />
+				<ul th:if="${#fields.hasErrors('titulo')}">
+				<li th:each="err : ${#fields.errors('titulo')}" th:text="${err}" class="error"></li>
+				</ul>
+			</div> 
+		</div>
+		<div style="margin-top: 6px;" class="clearfix">
+			<div style="float: left;width: 50%">
+				descripcion
+			</div>
+			<div style="float: none;width: auto;overflow: hidden;">
+				<input th:field="*{descripcion}" />
+				<ul th:if="${#fields.hasErrors('descripcion')}">
+				<li th:each="err : ${#fields.errors('descripcion')}" th:text="${err}" class="error"></li>
+				</ul>
+			</div> 
+		</div>
+		<div style="margin-top: 6px;" class="clearfix">
+			<div style="float: left;width: 50%">
+				anyo_lanzamiento
+			</div>
+			<div style="float: none;width: auto;overflow: hidden;">
+				<input th:field="*{anyo_lanzamiento}" />
+			</div> 
+		</div>
+		<div style="margin-top: 6px;" class="clearfix">
+			<div style="float: left;width: 50%">
+				id_idioma
+			</div>
+			<div style="float: none;width: auto;overflow: hidden;">
+				<input th:field="*{id_idioma}" />
+			</div> 
+		</div>
+		<div style="margin-top: 6px;" class="clearfix">
+			<div style="float: left;width: 50%">
+				id_idioma_original
+			</div>
+			<div style="float: none;width: auto;overflow: hidden;">
+				<input th:field="*{id_idioma_original}" />
+			</div> 
+		</div>
+		<div style="margin-top: 6px;" class="clearfix">
+			<div style="float: left;width: 50%">
+				duracion_alquiler
+			</div>
+			<div style="float: none;width: auto;overflow: hidden;">
+				<input th:field="*{duracion_alquiler}" />
+			</div> 
+		</div>
+		<div style="margin-top: 6px;" class="clearfix">
+			<div style="float: left;width: 50%">
+				rental_rate
+				
+			</div>
+			<div style="float: none;width: auto;overflow: hidden;">
+				<input th:field="*{rental_rate}" />
+				<ul th:if="${#fields.hasErrors('rental_rate')}">
+				<li th:each="err : ${#fields.errors('rental_rate')}" th:text="${err}" class="error"></li>
+				</ul>
+			</div> 
+		</div>
+		<div style="margin-top: 6px;" class="clearfix">
+			<div style="float: left;width: 50%">
+				duracion
+			</div>
+			<div style="float: none;width: auto;overflow: hidden;">
+				<input th:field="*{duracion}" />
+					<ul th:if="${#fields.hasErrors('duracion')}">
+				<li th:each="err : ${#fields.errors('duracion')}" th:text="${err}" class="error"></li>
+				</ul>
+			</div> 
+		</div>
+		<div style="margin-top: 6px;" class="clearfix">
+			<div style="float: left;width: 50%">
+				replacement_cost
+			</div>
+			<div style="float: none;width: auto;overflow: hidden;">
+				<input th:field="*{replacement_cost}" />
+				<ul th:if="${#fields.hasErrors('replacement_cost')}">
+				<li th:each="err : ${#fields.errors('replacement_cost')}" th:text="${err}" class="error"></li>
+				</ul>
+			</div> 
+		</div>
+		<div style="margin-top: 6px;" class="clearfix">
+			<div style="float: left;width: 50%">
+				clasificacion
+			</div>
+			<div style="float: none;width: auto;overflow: hidden;">
+				<input th:field="*{clasificacion}" />
+			</div> 
+		</div>
+	
+		<div style="margin-top: 6px;" class="clearfix">
+			<div style="float: left;width: 50%">
+				caracteristicas_especiales
+			</div>
+			<div style="float: none;width: auto;overflow: hidden;">
+				<input th:field="*{caracteristicas_especiales}" />
+			</div> 
+		</div>
+		
+
+	</form>
+</div>
+
+</body>
+</html>

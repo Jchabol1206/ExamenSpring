@@ -1,0 +1,79 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title th:text="Pelicula"></title>
+<style>
+.clearfix::after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+</style>
+</head>
+<body>
+<body>
+
+	<div id="contenedora" style="float:none; margin: 0 auto;width: 95%;" >
+		<div class="clearfix">
+			<div style="float: left; width: 50%">
+				<h1 th:text="Pelicula"></h1>
+			</div>
+			<div style="float: none;width: auto;overflow: hidden;min-height: 80px;position: relative;">
+				
+				<div style="position: absolute; left: 39%; top : 39%;">
+					
+						<form action="/pelicula/crear">
+							<input type="submit" th:value="Crear">
+						</form>
+					</div>
+				
+			</div>
+		</div>
+		<div class="clearfix">
+			<hr/>
+		</div>
+		<div class="clearfix">
+			<div style="float: left;width: 8%">Id</div>
+			<div style="float: left;width: 8%" th:text="titulo"></div>
+			<div style="float: left;width: 5%"th:text="descripcion"></div>
+			<div style="float: left;width: 8%" th:text="anyo_lanzamiento"></div>
+			<div style="float: left;width: 5%"th:text="id_idioma"></div>
+			<div style="float: left;width: 5%"th:text="id_idioma_original"></div>
+			<div style="float: left;width: 8%"th:text="duracion_alquiler"></div>
+			<div style="float: left;width: 8%"th:text="rental_rate"></div>
+			<div style="float: left;width: 8%"th:text="duracion"></div>
+			<div style="float: left;width: 8%"th:text="replacement_cost"></div>		
+			<div style="float: left;width: 8%"th:text="clasificacion"></div>	
+			<div style="float: left;width: 8%"th:text="caracteristicas_especiales"></div>	
+			<div style="float: left;width: 8%"th:text="ultima_actualizacion"></div>				
+
+			
+		</div>
+		<div class="clearfix">
+			<hr/>
+		</div>
+
+		<div  th:each="pelicula : ${listaPelicula}" style="margin-top: 6px;" class="clearfix">
+			<div style="float: left;width: 8%" th:text="${pelicula.id_pelicula}"></div>
+			<div style="float: left;width: 8%"th:text="${pelicula.titulo}"></div>
+			<div style="float: left;width: 5%" th:text="${pelicula.descripcion}"></div>
+			<div style="float: left;width: 8%" th:text="${pelicula.anyo_lanzamiento}"></div>
+			<div style="float: left;width: 5%"th:text="${pelicula.id_idioma}"></div>
+			<div style="float: left;width: 5%"th:text="${pelicula.id_idioma_original ?: '&nbsp;'}"></div>
+			<div style="float: left;width: 8%"th:text="${pelicula.duracion_alquiler}"></div>
+			<div style="float: left;width: 8%"th:text="${pelicula.rental_rate}"></div>
+			<div style="float: left;width: 8%"th:text="${pelicula.duracion}"></div>
+			<div style="float: left;width: 8%"th:text="${pelicula.replacement_cost}"></div>		
+			<div style="float: left;width: 8%"th:text="${pelicula.clasificacion}"></div>	
+			<div style="float: left;width: 8%"th:text="${pelicula.caracteristicas_especiales ?: '&nbsp;'}"></div>	
+			<div style="float: left;width: 8%"th:text="${pelicula.ultima_actualizacion}"></div>
+			<div style="float: none;width: auto;overflow: hidden;">
+		
+			</div>
+		</div>
+	</div>
+</body>
+</body>
+</html>
